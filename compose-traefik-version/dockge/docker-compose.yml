@@ -1,0 +1,48 @@
+services:
+  dockge:
+    image: louislam/dockge:1
+    container_name: dockge
+    restart: unless-stopped
+
+    ##### 📂 VOLUMES #####
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/stacks:/opt/stacks
+
+    ##### 🌍 ENVIRONNEMENT #####
+    environment:
+      - DOCKGE_STACKS_DIR=/opt/stacks
+
+    ##### 🔗 NETWORKING #####
+    networks:
+      - traefik-net
+
+    ##### 🚀 TRAEFIK CONFIGURATION #####
+    labels:
+      - "traefik.enable=true"
+
+      ##### 🌐 ROUTING & DOMAIN #####
+      # 🇫🇷 Remplacez "dockge.example.ltd" par votre propre domaine
+      # 🇬🇧 Replace "dockge.example.ltd" with your own domain
+      - "traefik.http.routers.dockge.rule=Host(`dockge.example.ltd`)"
+      - "traefik.http.routers.dockge.entrypoints=https"
+      - "traefik.http.routers.dockge.tls.certresolver=letsencrypt"
+
+      ##### 🔐 RESTRICTION D'ACCÈS (OPTIONNEL) #####
+      # 🇫🇷 Activez cette ligne pour limiter l'accès à certaines adresses IP
+      # 🇬🇧 Enable this line to restrict access to specific IP addresses
+      #- "traefik.http.routers.dockge.middlewares=dockge-ipwhitelist"
+
+      # 🇫🇷 Si vous utilisez un VPN, ajoutez ici vos adresses IP autorisées
+      # 🇬🇧 If you use a VPN, add your allowed IP addresses here
+      #- "traefik.http.middlewares.dockge-ipwhitelist.ipwhitelist.sourcerange=YOURIP1,YOURIP2"
+
+      ##### ⚙️ SERVICE CONFIGURATION #####
+      # 🇫🇷 Définition du port interne utilisé par Dockge
+      # 🇬🇧 Define the internal port used by Dockge
+      - "traefik.http.services.dockge.loadbalancer.server.port=5001"
+
+##### 🔗 NETWORK CONFIGURATION #####
+networks:
+  traefik-net:
+    external: true
