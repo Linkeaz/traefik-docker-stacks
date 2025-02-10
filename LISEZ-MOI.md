@@ -4,6 +4,7 @@
 
 Cette collection de stacks **Docker Compose** permet d'auto-héberger facilement vos services avec **Traefik** comme reverse proxy principal. Il gère automatiquement les certificats SSL et le routage sécurisé.
 
+#### ➡ **Lire la version anglaise/Read the english version :** [README.md](README.md)
 ---
 
 ## 📂 Structure du projet
