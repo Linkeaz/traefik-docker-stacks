@@ -1,6 +1,6 @@
 # 📌 Traefik and Docker: Stack Organization
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 This collection of **Docker Compose** stacks enables easy self-hosting using **Traefik** as the main reverse proxy. It automatically manages SSL certificates and secure routing.
 
@@ -85,7 +85,7 @@ Each stack offers different configuration methods depending on usage:
 
 ## 📜 License & Attribution
 
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
 This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
