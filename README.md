@@ -4,6 +4,7 @@
 
 This collection of **Docker Compose** stacks enables easy self-hosting using **Traefik** as the main reverse proxy. It automatically manages SSL certificates and secure routing.
 
+#### ➡ **Read the French version/Lire la version française:** [LISEZ-MOI.md](LISEZ-MOI.md)
 ---
 
 ## 📂 Project Structure
