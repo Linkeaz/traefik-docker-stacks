@@ -1,6 +1,6 @@
 # 📌 Traefik et Docker : Organisation des Stacks
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 Cette collection de stacks **Docker Compose** permet d'auto-héberger facilement vos services avec **Traefik** comme reverse proxy principal. Il gère automatiquement les certificats SSL et le routage sécurisé.
 
@@ -85,7 +85,7 @@ Chaque stack dispose de différentes méthodes de configuration selon son usage 
 
 ## 📜 Licence & Attribution
 
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
 Ce projet est sous licence [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
