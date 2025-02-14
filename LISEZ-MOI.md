@@ -19,15 +19,15 @@ Cette collection de stacks **Docker Compose** permet d'auto-héberger facilement
 ```
 compose-traefik-version/
 │── dockge/
+│   ├── .env.example
 │   ├── LISEZ-MOI.md
 │   ├── README.md
 │   ├── docker-compose.yml
 │── traefik/
-│   ├── docker-compose.yml
-│   ├── .env
+│   ├── .env.example
 │   ├── LISEZ-MOI.md
 │   ├── README.md
-│   ├── traefik.yml
+│   ├── docker-compose.yml
 │── .../
 CODE_OF_CONDUCT.md
 LICENSE
