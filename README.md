@@ -1,4 +1,4 @@
-# 📌 Traefik and Docker: Stack Organization
+# 📌 Traefik and Docker Stacks
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
@@ -99,9 +99,6 @@ This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 
 - ✅ You may **use, modify, and redistribute** this guide and its configurations.
 - ✅ You must **credit the author** by citing **[Slym B.](https://github.com/slym-b)**.
 - ❌ You **may not remove attribution**.
-
-📌 **Author:** [Slym B.](https://github.com/slym-b)  
-📌 **Organization:** [Linkeaz](https://github.com/linkeaz)  
 
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
