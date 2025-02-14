@@ -69,6 +69,16 @@ Replace `user` and `password` with your desired credentials.
 TRAEFIK_DASHBOARD_CREDENTIALS=user:password
 ```
 
+## Resource Configuration (Optional)
+
+Resource limits for the Uptime Kuma container can be set in the `.env` file:
+```ini
+TRAEFIK_MEMORY_LIMIT=512M
+TRAEFIK_MEMORY_RESERVATION=256M
+TRAEFIK_CPU_LIMIT=1.0
+```
+These values help limit RAM and CPU usage to ensure optimal performance without overloading the server.
+
 ## Documentation
 
 For detailed installation instructions and advanced configurations, check the [Official Traefik Documentation](https://doc.traefik.io/traefik).
