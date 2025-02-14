@@ -69,6 +69,15 @@ Remplacez `user` et `password` par vos identifiants souhaités.
 TRAEFIK_DASHBOARD_CREDENTIALS=user:password
 ```
 
+## Configuration des ressources (optionnel)
+
+Les limites de ressources pour le conteneur Traefik peuvent être définies dans le fichier `.env` :
+```ini
+TRAEFIK_MEMORY_LIMIT=512M
+TRAEFIK_MEMORY_RESERVATION=256M
+TRAEFIK_CPU_LIMIT=1.0
+```
+Ces valeurs permettent de limiter l'utilisation de la RAM et du CPU pour garantir un fonctionnement optimal sans surcharger le serveur.
 ## Documentation
 
 Pour des instructions détaillées sur l'installation et les configurations avancées, consultez la [Documentation officielle de Traefik](https://doc.traefik.io/traefik).
