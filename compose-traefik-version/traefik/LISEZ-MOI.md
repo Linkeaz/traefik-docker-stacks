@@ -34,11 +34,8 @@ Traefik est un **proxy inverse** et un **équilibreur de charge** dynamique con�
 
 ## Configuration du filtrage IP (optionnel)
 
-🇫🇷 Traefik permet d'activer un filtrage d'IP pour restreindre l'accès à certains utilisateurs.
+Traefik permet d'activer un filtrage d'IP pour restreindre l'accès à certains utilisateurs.
 Pour l'activer, ajoutez les adresses IP autorisées dans le fichier `.env` sous la variable `ALLOWED_IPS`.
-
-🇬🇧 Traefik allows enabling IP filtering to restrict access to specific users.
-To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
 
 Exemple de configuration dans `.env`:
 ```ini
