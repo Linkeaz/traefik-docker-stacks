@@ -34,10 +34,7 @@ Traefik is a **reverse proxy** and **load balancer** designed for modern cloud-n
 
 ## IP Filtering Configuration (Optional)
 
-🇫🇷 Traefik allows enabling IP filtering to restrict access to specific users.
-To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
-
-🇬🇧 Traefik allows enabling IP filtering to restrict access to specific users.
+Traefik allows enabling IP filtering to restrict access to specific users.
 To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
 
 Example configuration in `.env`:
