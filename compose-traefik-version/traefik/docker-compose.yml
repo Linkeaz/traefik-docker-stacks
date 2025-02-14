@@ -59,10 +59,10 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512M
-          cpus: "1.0"
+          memory: ${TRAEFIK_MEMORY_LIMIT}
+          cpus: "${TRAEFIK_CPU_LIMIT}"
         reservations:
-          memory: 256M
+          memory: ${TRAEFIK_MEMORY_RESERVATION}
 
 networks:
   traefik-net:
