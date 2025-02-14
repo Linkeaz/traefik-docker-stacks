@@ -6,7 +6,7 @@
 ![Ubuntu 22.04+](https://img.shields.io/badge/Ubuntu-22.04%2B-orange?logo=ubuntu)
 ![Debian 11+](https://img.shields.io/badge/Debian-11%2B-blue?logo=debian)
 ![Docker](https://img.shields.io/badge/Docker-Compose-informational?logo=docker)
-![Traefik](https://img.shields.io/badge/Traefik-Enabled-blueviolet?logo=traefikproxy)
+![Traefik Prêt](https://img.shields.io/badge/Traefik-Ready-blueviolet?logo=traefikproxy)
 
 This collection of **Docker Compose** stacks enables easy self-hosting using **Traefik** as the main reverse proxy. It automatically manages SSL certificates and secure routing.
 
