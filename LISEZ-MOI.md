@@ -1,8 +1,7 @@
-# 📌 Traefik et Docker : Organisation des Stacks
+# 📌 Traefik et Docker Stacks
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
-![Linux Compatible](https://img.shields.io/badge/Linux-Compatible-green?logo=linux)
 ![Ubuntu 22.04+](https://img.shields.io/badge/Ubuntu-22.04%2B-orange?logo=ubuntu)
 ![Debian 11+](https://img.shields.io/badge/Debian-11%2B-blue?logo=debian)
 ![Docker](https://img.shields.io/badge/Docker-Compose-informational?logo=docker)
@@ -100,9 +99,6 @@ Ce projet est sous licence [Creative Commons Attribution-ShareAlike 4.0 Internat
 - ✅ Vous pouvez **utiliser, modifier et redistribuer** ce guide et ses configurations.
 - ✅ Vous devez **mentionner l’auteur** en citant **[Slym B.](https://github.com/slym-b)**.
 - ❌ Vous ne pouvez **pas supprimer l’attribution**.
-
-📌 **Auteur :** [Slym B.](https://github.com/slym-b)  
-📌 **Organisation :** [Linkeaz](https://github.com/linkeaz)  
 
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
