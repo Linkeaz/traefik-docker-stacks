@@ -1,4 +1,4 @@
-<p align="left">
+<p align="center">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo-dark.png">
         <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png">
@@ -8,32 +8,50 @@
 
 # Traefik
 
-### Author : [Traefik Labs](https://github.com/traefik)
+### Author: [Traefik Labs](https://github.com/traefik)
+### Repository: [Traefik on GitHub](https://github.com/traefik/traefik)
 
-### Repository : [Traefik on GitHub](https://github.com/traefik/traefik)
-
-A modern, cloud-native, and easy-to-use reverse proxy and load balancer.
+A modern, cloud-native, and easy-to-use reverse proxy.
 
 ## About
 
-Traefik is an efficient and dynamic **reverse proxy** and **load balancer** designed for modern cloud-native applications. It integrates seamlessly with **Docker**, **Kubernetes**, **Consul**, and various other orchestrators, automatically detecting services and routing traffic without requiring extensive manual configuration.
+Traefik is a **reverse proxy** and **load balancer** designed for modern cloud-native applications. It integrates seamlessly with **Docker**, **Kubernetes**, **Consul**, and other orchestrators, automatically detecting services and routing traffic without extensive manual configuration.
 
 ## Features
 
-- **Automatic service discovery**: Traefik dynamically updates routes as services start, stop, or scale.
-- **Built-in Let's Encrypt SSL**: Automated HTTPS certificates and renewal.
-- **Powerful middleware**: Includes authentication, rate limiting, and custom routing.
+- **Automatic service discovery**: Dynamically updates routes when services start, stop, or change.
+- **Built-in Let's Encrypt SSL**: Automatically generates and renews HTTPS certificates.
+- **Powerful middleware**: Authentication, rate limiting, and custom routing.
 - **Observability**: Detailed metrics, logging, and tracing support.
 - **Flexible deployment**: Works with Docker, Kubernetes, Swarm, Consul, and more.
-- **Dashboard**: Intuitive web UI for monitoring and managing traffic routes.
+- **Dashboard**: Intuitive web interface for monitoring and managing traffic routes.
 
 ## Containers
 
-| Name    | Description                                | Port    |
-| ------- | ------------------------------------------ | ------- |
-| traefik | Reverse proxy and load balancer management | 80, 443 |
+| Name    | Description                               | Ports  |
+| ------- | ----------------------------------------- | ------ |
+| traefik | Reverse proxy and load balancing manager | 80, 443 |
 
-## Setting Up Authentication
+## IP Filtering Configuration (Optional)
+
+🇫🇷 Traefik allows enabling IP filtering to restrict access to specific users.
+To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
+
+🇬🇧 Traefik allows enabling IP filtering to restrict access to specific users.
+To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
+
+Example configuration in `.env`:
+```ini
+ALLOWED_IPS=192.168.1.1,192.168.1.2
+```
+
+If you do not want to enable this restriction, you can comment out or remove these lines in `docker-compose.yml`:
+```yaml
+- "traefik.http.routers.traefik-secure.middlewares=traefik-ipwhitelist"
+- "traefik.http.middlewares.traefik-ipwhitelist.ipwhitelist.sourcerange=${ALLOWED_IPS}"
+```
+
+## Authentication Configuration
 
 To secure the Traefik dashboard with basic authentication, follow these steps:
 
@@ -56,10 +74,11 @@ TRAEFIK_DASHBOARD_CREDENTIALS=user:password
 
 ## Documentation
 
-For detailed setup instructions and advanced configurations, visit the official [Traefik Documentation](https://doc.traefik.io/traefik).
+For detailed installation instructions and advanced configurations, check the [Official Traefik Documentation](https://doc.traefik.io/traefik).
 
 ## Community & Support
 
 - [Community Forum](https://community.traefik.io/)
 - [Twitter](https://twitter.com/intent/follow?screen_name=traefik)
 - [GitHub Issues](https://github.com/traefik/traefik/issues)
+
