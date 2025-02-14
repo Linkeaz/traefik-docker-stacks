@@ -2,7 +2,6 @@
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
-![Linux Compatible](https://img.shields.io/badge/Linux-Compatible-green?logo=linux)
 ![Ubuntu 22.04+](https://img.shields.io/badge/Ubuntu-22.04%2B-orange?logo=ubuntu)
 ![Debian 11+](https://img.shields.io/badge/Debian-11%2B-blue?logo=debian)
 ![Docker](https://img.shields.io/badge/Docker-Compose-informational?logo=docker)
