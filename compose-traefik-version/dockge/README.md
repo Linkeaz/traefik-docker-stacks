@@ -29,9 +29,7 @@ Dockge is a lightweight and efficient tool designed to manage **Docker Compose**
 
 ## IP Filtering Configuration (Optional)
 
-🇫🇷 Traefik allows enabling IP filtering to restrict access to certain users. To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
-
-🇬🇧 Traefik allows enabling IP filtering to restrict access to specific users. To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
+Traefik allows enabling IP filtering to restrict access to certain users. To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
 
 Example configuration in `.env`:
 
