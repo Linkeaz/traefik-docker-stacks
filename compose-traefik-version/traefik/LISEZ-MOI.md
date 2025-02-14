@@ -1,4 +1,4 @@
-<p align="left">
+<p align="center">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo-dark.png">
         <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png">
@@ -9,7 +9,6 @@
 # Traefik
 
 ### Auteur : [Traefik Labs](https://github.com/traefik)
-
 ### Dépôt : [Traefik sur GitHub](https://github.com/traefik/traefik)
 
 Un proxy inverse moderne, cloud-native et facile à utiliser.
@@ -29,9 +28,28 @@ Traefik est un **proxy inverse** et un **équilibreur de charge** dynamique con�
 
 ## Conteneurs
 
-| Nom    | Description                                | Port    |
+| Nom    | Description                                | Ports  |
 | ------- | ------------------------------------------ | ------- |
 | traefik | Gestion du proxy inverse et de l'équilibrage de charge | 80, 443 |
+
+## Configuration du filtrage IP (optionnel)
+
+🇫🇷 Traefik permet d'activer un filtrage d'IP pour restreindre l'accès à certains utilisateurs.
+Pour l'activer, ajoutez les adresses IP autorisées dans le fichier `.env` sous la variable `ALLOWED_IPS`.
+
+🇬🇧 Traefik allows enabling IP filtering to restrict access to specific users.
+To enable it, add the authorized IP addresses in the `.env` file under the variable `ALLOWED_IPS`.
+
+Exemple de configuration dans `.env`:
+```ini
+ALLOWED_IPS=192.168.1.1,192.168.1.2
+```
+
+Si vous ne souhaitez pas activer cette restriction, vous pouvez commenter ou supprimer ces lignes dans le `docker-compose.yml` :
+```yaml
+- "traefik.http.routers.traefik-secure.middlewares=traefik-ipwhitelist"
+- "traefik.http.middlewares.traefik-ipwhitelist.ipwhitelist.sourcerange=${ALLOWED_IPS}"
+```
 
 ## Configuration de l'authentification
 
