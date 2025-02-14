@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   traefik:
     image: traefik:v3.3
@@ -5,28 +7,17 @@ services:
     restart: unless-stopped
 
     command:
-      ##### 📜 LOGGING CONFIGURATION #####
-      # 🇫🇷 Activation des logs d'accès
-      # 🇬🇧 Enable access logs
       - --accesslog=true
       - --accesslog.filepath=/letsencrypt/access.log
-
-      ##### 🖥️ DASHBOARD & PROVIDERS #####
       - --api.dashboard=true
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
-
-      ##### 🌍 ENTRYPOINTS (HTTP/HTTPS) #####
       - --entrypoints.http.address=:80
       - --entrypoints.http.http.redirections.entrypoint.to=https
       - --entrypoints.http.http.redirections.entrypoint.scheme=https
       - --entryPoints.https.address=:443
-
-      ##### 🔒 LET'S ENCRYPT CONFIGURATION #####
       - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
-      # 🇫🇷 Remplacez "example@example.ltd" par votre email pour les notifications Let's Encrypt
-      # 🇬🇧 Replace "example@example.ltd" with your email for Let's Encrypt notifications
-      - --certificatesresolvers.letsencrypt.acme.email=example@example.ltd
+      - --certificatesresolvers.letsencrypt.acme.email=${TRAEFIK_ACME_EMAIL}
       - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
 
     security_opt:
@@ -36,12 +27,12 @@ services:
       - traefik-net
 
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
 
     environment:
-      TRAEFIK_DASHBOARD_CREDENTIALS: ${TRAEFIK_DASHBOARD_CREDENTIALS}
-
+      - TRAEFIK_DASHBOARD_CREDENTIALS=${TRAEFIK_DASHBOARD_CREDENTIALS}
+    
     env_file: .env
 
     volumes:
@@ -49,29 +40,19 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
     labels:
-      ##### 🚀 TRAEFIK CONFIGURATION #####
-      - traefik.enable=true
-      # 🇫🇷 Remplacez "traefik.example.ltd" par votre domaine
-      # 🇬🇧 Replace "traefik.example.ltd" with your domain
-      - traefik.http.routers.traefik-secure.rule=Host(`traefik.example.ltd`)
-      - traefik.http.routers.traefik-secure.entrypoints=https
-      - traefik.http.routers.traefik-secure.service=api@internal
-      - traefik.http.routers.traefik-secure.tls.certresolver=letsencrypt
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_DOMAIN}`)"
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS}"
 
-      ##### 🔐 SÉCURISATION DU DASHBOARD #####
-      # 🇫🇷 Activez cette ligne pour limiter l'accès au dashboard à certaines IPs
-      # 🇬🇧 Activate this line to restrict dashboard access to certain IPs
-      #- traefik.http.routers.traefik-secure.middlewares=traefik-ipwhitelist,traefik-auth
-
-      # 🇫🇷 Ajoutez ici vos adresses IP pour limiter l'accès (ex: VPN)
-      # 🇬🇧 Add your IPs here to limit access (e.g., VPN)
-      #- traefik.http.middlewares.traefik-ipwhitelist.ipwhitelist.sourcerange=YOURIP1,YOURIP2
-
-      # 🇫🇷 Active l'authentification basique pour le dashboard
-      # 🇬🇧 Enable basic authentication for the dashboard
-      - traefik.http.routers.traefik-secure.middlewares=traefik-auth
-      - traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS}
-      - traefik.http.routers.traefik-secure.tls=true
+      # 🇫🇷 Activer/Désactiver le filtrage d'IP (voir LISEZ-MOI)
+      # 🇬🇧 Enable/Disable IP filtering (see README)
+      - "traefik.http.routers.traefik-secure.middlewares=traefik-ipwhitelist,traefik-auth"
+      - "traefik.http.middlewares.traefik-ipwhitelist.ipwhitelist.sourcerange=${ALLOWED_IPS}"
       
     # 🇫🇷 Remplacez selon vos exigences ou retiré cette partie
     # 🇬🇧 Replace according to your requirements or remove this part
