@@ -76,7 +76,6 @@ Each stack offers different configuration methods depending on usage:
 - **Customization during installation**: Some parameters must be manually set during initial setup.
 
 ### Configuration Examples
-- **Domain Name**: Modify entries like `traefik.http.routers.<service>.rule=Host(\`your-domain.com\`)` in `docker-compose.yml`.
 - **Secure Access**: Add authentication or restrict access via Traefik middlewares.
 - **SSL Certificates**: Let's Encrypt automatically generates certificates; ensure your DNS is correctly set up before deployment.
 
