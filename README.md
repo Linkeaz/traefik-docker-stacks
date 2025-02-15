@@ -96,7 +96,7 @@ This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 
 
 ### 🔹 Rights and Obligations:
 - ✅ You may **use, modify, and redistribute** this guide and its configurations.
-- ✅ You must **credit the author** by citing **[Slym B.](https://github.com/slym-b)**.
+- ✅ You must **credit the author** by citing **[Slym B.](https://github.com/slymb)**.
 - ❌ You **may not remove attribution**.
 
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
